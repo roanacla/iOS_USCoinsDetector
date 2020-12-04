@@ -17,6 +17,8 @@ class VisionObjectRecognitionViewController: ViewController {
     private var requests = [VNRequest]()
     
     typealias Dollars = Decimal
+    private let dollarLabels: [String:String] = ["nickel":"5",
+                                             "dime":"10"]
     
     @discardableResult
     func setupVision() -> NSError? {
@@ -93,7 +95,7 @@ class VisionObjectRecognitionViewController: ViewController {
             shapeLayer.addSublayer(textLayer)
             detectionOverlay.addSublayer(shapeLayer)
         }
-        self.updateLayerGeometry()
+//        self.updateLayerGeometry()
         CATransaction.commit()
     }
     
@@ -162,11 +164,12 @@ class VisionObjectRecognitionViewController: ViewController {
     func createTextSubLayerInBounds(_ bounds: CGRect, identifier: String, confidence: VNConfidence) -> CATextLayer {
         let textLayer = CATextLayer()
         textLayer.name = "Object Label"
-        let formattedString = NSMutableAttributedString(string: "￠")
-        let largeFont = UIFont(name: "Helvetica", size: 24.0)!
-        formattedString.addAttributes([NSAttributedString.Key.font: largeFont], range: NSRange(location: 0, length: 1))
+        let label = dollarLabels[identifier] ?? ""
+        let formattedString = NSMutableAttributedString(string: label+"￠")
+        let largeFont = UIFont(name: "Helvetica", size: 16.0)!
+        formattedString.addAttributes([NSAttributedString.Key.font: largeFont], range: NSRange(location: 0, length: label.count + 1))
         textLayer.string = formattedString
-        textLayer.bounds = CGRect(x: 0, y: 0, width: bounds.size.height - 10, height: bounds.size.width - 10)
+        textLayer.bounds = CGRect(x:0, y: (-bounds.size.height/2) + 16, width: bounds.size.height - 10, height: bounds.size.width - 10)
         textLayer.position = CGPoint(x: bounds.midX, y: bounds.midY)
         textLayer.shadowOpacity = 0.7
         textLayer.shadowOffset = CGSize(width: 2, height: 2)
