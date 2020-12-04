@@ -16,6 +16,8 @@
 		DB7FB8842579BF2B00A97433 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB7FB8822579BF2B00A97433 /* LaunchScreen.storyboard */; };
 		DB7FB88F2579BF2C00A97433 /* iOS_USCoinsDetectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FB88E2579BF2C00A97433 /* iOS_USCoinsDetectorTests.swift */; };
 		DB7FB89A2579BF2C00A97433 /* iOS_USCoinsDetectorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FB8992579BF2C00A97433 /* iOS_USCoinsDetectorUITests.swift */; };
+		DB9E44202579C46600F53761 /* VisionObjectRecognitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9E441F2579C46600F53761 /* VisionObjectRecognitionViewController.swift */; };
+		DB9E44252579C48C00F53761 /* USCoinsDetector.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = DB9E44242579C48C00F53761 /* USCoinsDetector.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		DB7FB8952579BF2C00A97433 /* iOS_USCoinsDetectorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOS_USCoinsDetectorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB7FB8992579BF2C00A97433 /* iOS_USCoinsDetectorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_USCoinsDetectorUITests.swift; sourceTree = "<group>"; };
 		DB7FB89B2579BF2C00A97433 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB9E441F2579C46600F53761 /* VisionObjectRecognitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisionObjectRecognitionViewController.swift; sourceTree = "<group>"; };
+		DB9E44242579C48C00F53761 /* USCoinsDetector.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = USCoinsDetector.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +90,9 @@
 				DB7FB8982579BF2C00A97433 /* iOS_USCoinsDetectorUITests */,
 				DB7FB8722579BF2900A97433 /* Products */,
 			);
+			indentWidth = 4;
 			sourceTree = "<group>";
+			tabWidth = 4;
 		};
 		DB7FB8722579BF2900A97433 /* Products */ = {
 			isa = PBXGroup;
@@ -104,6 +110,8 @@
 				DB7FB8742579BF2900A97433 /* AppDelegate.swift */,
 				DB7FB8762579BF2900A97433 /* SceneDelegate.swift */,
 				DB7FB8782579BF2900A97433 /* ViewController.swift */,
+				DB9E441F2579C46600F53761 /* VisionObjectRecognitionViewController.swift */,
+				DB9E44242579C48C00F53761 /* USCoinsDetector.mlmodel */,
 				DB7FB87A2579BF2900A97433 /* Main.storyboard */,
 				DB7FB8802579BF2B00A97433 /* Assets.xcassets */,
 				DB7FB8822579BF2B00A97433 /* LaunchScreen.storyboard */,
@@ -262,9 +270,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB7FB87F2579BF2900A97433 /* iOS_USCoinsDetector.xcdatamodeld in Sources */,
+				DB9E44252579C48C00F53761 /* USCoinsDetector.mlmodel in Sources */,
 				DB7FB8792579BF2900A97433 /* ViewController.swift in Sources */,
 				DB7FB8752579BF2900A97433 /* AppDelegate.swift in Sources */,
 				DB7FB8772579BF2900A97433 /* SceneDelegate.swift in Sources */,
+				DB9E44202579C46600F53761 /* VisionObjectRecognitionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
