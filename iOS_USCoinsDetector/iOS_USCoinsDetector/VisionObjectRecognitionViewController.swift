@@ -131,9 +131,9 @@ class VisionObjectRecognitionViewController: ViewController {
     func createTextSubLayerInBounds(_ bounds: CGRect, identifier: String, confidence: VNConfidence) -> CATextLayer {
         let textLayer = CATextLayer()
         textLayer.name = "Object Label"
-        let formattedString = NSMutableAttributedString(string: String(format: "\(identifier)\nConfidence:  %.2f", confidence))
+        let formattedString = NSMutableAttributedString(string: "￠")
         let largeFont = UIFont(name: "Helvetica", size: 24.0)!
-        formattedString.addAttributes([NSAttributedString.Key.font: largeFont], range: NSRange(location: 0, length: identifier.count))
+        formattedString.addAttributes([NSAttributedString.Key.font: largeFont], range: NSRange(location: 0, length: 1))
         textLayer.string = formattedString
         textLayer.bounds = CGRect(x: 0, y: 0, width: bounds.size.height - 10, height: bounds.size.width - 10)
         textLayer.position = CGPoint(x: bounds.midX, y: bounds.midY)
