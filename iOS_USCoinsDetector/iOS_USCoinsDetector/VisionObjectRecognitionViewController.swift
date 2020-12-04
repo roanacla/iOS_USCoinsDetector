@@ -34,6 +34,8 @@ class VisionObjectRecognitionViewController: ViewController {
                     if let results = self.getObservations(request.results) {
                         self.calculateTotal(results)
                         self.drawVisionRequestResults(results)
+                    } else {
+                        self.detectionOverlay.sublayers = nil // remove all the old recognized objects
                     }
                 })
             })
