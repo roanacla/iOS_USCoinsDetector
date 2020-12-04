@@ -1,0 +1,615 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DB7FB8752579BF2900A97433 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FB8742579BF2900A97433 /* AppDelegate.swift */; };
+		DB7FB8772579BF2900A97433 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FB8762579BF2900A97433 /* SceneDelegate.swift */; };
+		DB7FB8792579BF2900A97433 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FB8782579BF2900A97433 /* ViewController.swift */; };
+		DB7FB87C2579BF2900A97433 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB7FB87A2579BF2900A97433 /* Main.storyboard */; };
+		DB7FB87F2579BF2900A97433 /* iOS_USCoinsDetector.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DB7FB87D2579BF2900A97433 /* iOS_USCoinsDetector.xcdatamodeld */; };
+		DB7FB8812579BF2B00A97433 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB7FB8802579BF2B00A97433 /* Assets.xcassets */; };
+		DB7FB8842579BF2B00A97433 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB7FB8822579BF2B00A97433 /* LaunchScreen.storyboard */; };
+		DB7FB88F2579BF2C00A97433 /* iOS_USCoinsDetectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FB88E2579BF2C00A97433 /* iOS_USCoinsDetectorTests.swift */; };
+		DB7FB89A2579BF2C00A97433 /* iOS_USCoinsDetectorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FB8992579BF2C00A97433 /* iOS_USCoinsDetectorUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DB7FB88B2579BF2C00A97433 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB7FB8692579BF2900A97433 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB7FB8702579BF2900A97433;
+			remoteInfo = iOS_USCoinsDetector;
+		};
+		DB7FB8962579BF2C00A97433 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB7FB8692579BF2900A97433 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB7FB8702579BF2900A97433;
+			remoteInfo = iOS_USCoinsDetector;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DB7FB8712579BF2900A97433 /* iOS_USCoinsDetector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_USCoinsDetector.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB7FB8742579BF2900A97433 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DB7FB8762579BF2900A97433 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		DB7FB8782579BF2900A97433 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DB7FB87B2579BF2900A97433 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DB7FB87E2579BF2900A97433 /* iOS_USCoinsDetector.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iOS_USCoinsDetector.xcdatamodel; sourceTree = "<group>"; };
+		DB7FB8802579BF2B00A97433 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DB7FB8832579BF2B00A97433 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DB7FB8852579BF2B00A97433 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB7FB88A2579BF2C00A97433 /* iOS_USCoinsDetectorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOS_USCoinsDetectorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB7FB88E2579BF2C00A97433 /* iOS_USCoinsDetectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_USCoinsDetectorTests.swift; sourceTree = "<group>"; };
+		DB7FB8902579BF2C00A97433 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB7FB8952579BF2C00A97433 /* iOS_USCoinsDetectorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOS_USCoinsDetectorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB7FB8992579BF2C00A97433 /* iOS_USCoinsDetectorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_USCoinsDetectorUITests.swift; sourceTree = "<group>"; };
+		DB7FB89B2579BF2C00A97433 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DB7FB86E2579BF2900A97433 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB7FB8872579BF2C00A97433 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB7FB8922579BF2C00A97433 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DB7FB8682579BF2900A97433 = {
+			isa = PBXGroup;
+			children = (
+				DB7FB8732579BF2900A97433 /* iOS_USCoinsDetector */,
+				DB7FB88D2579BF2C00A97433 /* iOS_USCoinsDetectorTests */,
+				DB7FB8982579BF2C00A97433 /* iOS_USCoinsDetectorUITests */,
+				DB7FB8722579BF2900A97433 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DB7FB8722579BF2900A97433 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB7FB8712579BF2900A97433 /* iOS_USCoinsDetector.app */,
+				DB7FB88A2579BF2C00A97433 /* iOS_USCoinsDetectorTests.xctest */,
+				DB7FB8952579BF2C00A97433 /* iOS_USCoinsDetectorUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB7FB8732579BF2900A97433 /* iOS_USCoinsDetector */ = {
+			isa = PBXGroup;
+			children = (
+				DB7FB8742579BF2900A97433 /* AppDelegate.swift */,
+				DB7FB8762579BF2900A97433 /* SceneDelegate.swift */,
+				DB7FB8782579BF2900A97433 /* ViewController.swift */,
+				DB7FB87A2579BF2900A97433 /* Main.storyboard */,
+				DB7FB8802579BF2B00A97433 /* Assets.xcassets */,
+				DB7FB8822579BF2B00A97433 /* LaunchScreen.storyboard */,
+				DB7FB8852579BF2B00A97433 /* Info.plist */,
+				DB7FB87D2579BF2900A97433 /* iOS_USCoinsDetector.xcdatamodeld */,
+			);
+			path = iOS_USCoinsDetector;
+			sourceTree = "<group>";
+		};
+		DB7FB88D2579BF2C00A97433 /* iOS_USCoinsDetectorTests */ = {
+			isa = PBXGroup;
+			children = (
+				DB7FB88E2579BF2C00A97433 /* iOS_USCoinsDetectorTests.swift */,
+				DB7FB8902579BF2C00A97433 /* Info.plist */,
+			);
+			path = iOS_USCoinsDetectorTests;
+			sourceTree = "<group>";
+		};
+		DB7FB8982579BF2C00A97433 /* iOS_USCoinsDetectorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DB7FB8992579BF2C00A97433 /* iOS_USCoinsDetectorUITests.swift */,
+				DB7FB89B2579BF2C00A97433 /* Info.plist */,
+			);
+			path = iOS_USCoinsDetectorUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DB7FB8702579BF2900A97433 /* iOS_USCoinsDetector */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB7FB89E2579BF2C00A97433 /* Build configuration list for PBXNativeTarget "iOS_USCoinsDetector" */;
+			buildPhases = (
+				DB7FB86D2579BF2900A97433 /* Sources */,
+				DB7FB86E2579BF2900A97433 /* Frameworks */,
+				DB7FB86F2579BF2900A97433 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iOS_USCoinsDetector;
+			productName = iOS_USCoinsDetector;
+			productReference = DB7FB8712579BF2900A97433 /* iOS_USCoinsDetector.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DB7FB8892579BF2C00A97433 /* iOS_USCoinsDetectorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB7FB8A12579BF2C00A97433 /* Build configuration list for PBXNativeTarget "iOS_USCoinsDetectorTests" */;
+			buildPhases = (
+				DB7FB8862579BF2C00A97433 /* Sources */,
+				DB7FB8872579BF2C00A97433 /* Frameworks */,
+				DB7FB8882579BF2C00A97433 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DB7FB88C2579BF2C00A97433 /* PBXTargetDependency */,
+			);
+			name = iOS_USCoinsDetectorTests;
+			productName = iOS_USCoinsDetectorTests;
+			productReference = DB7FB88A2579BF2C00A97433 /* iOS_USCoinsDetectorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DB7FB8942579BF2C00A97433 /* iOS_USCoinsDetectorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB7FB8A42579BF2C00A97433 /* Build configuration list for PBXNativeTarget "iOS_USCoinsDetectorUITests" */;
+			buildPhases = (
+				DB7FB8912579BF2C00A97433 /* Sources */,
+				DB7FB8922579BF2C00A97433 /* Frameworks */,
+				DB7FB8932579BF2C00A97433 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DB7FB8972579BF2C00A97433 /* PBXTargetDependency */,
+			);
+			name = iOS_USCoinsDetectorUITests;
+			productName = iOS_USCoinsDetectorUITests;
+			productReference = DB7FB8952579BF2C00A97433 /* iOS_USCoinsDetectorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DB7FB8692579BF2900A97433 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1220;
+				LastUpgradeCheck = 1220;
+				TargetAttributes = {
+					DB7FB8702579BF2900A97433 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					DB7FB8892579BF2C00A97433 = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = DB7FB8702579BF2900A97433;
+					};
+					DB7FB8942579BF2C00A97433 = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = DB7FB8702579BF2900A97433;
+					};
+				};
+			};
+			buildConfigurationList = DB7FB86C2579BF2900A97433 /* Build configuration list for PBXProject "iOS_USCoinsDetector" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DB7FB8682579BF2900A97433;
+			productRefGroup = DB7FB8722579BF2900A97433 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DB7FB8702579BF2900A97433 /* iOS_USCoinsDetector */,
+				DB7FB8892579BF2C00A97433 /* iOS_USCoinsDetectorTests */,
+				DB7FB8942579BF2C00A97433 /* iOS_USCoinsDetectorUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DB7FB86F2579BF2900A97433 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB7FB8842579BF2B00A97433 /* LaunchScreen.storyboard in Resources */,
+				DB7FB8812579BF2B00A97433 /* Assets.xcassets in Resources */,
+				DB7FB87C2579BF2900A97433 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB7FB8882579BF2C00A97433 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB7FB8932579BF2C00A97433 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DB7FB86D2579BF2900A97433 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB7FB87F2579BF2900A97433 /* iOS_USCoinsDetector.xcdatamodeld in Sources */,
+				DB7FB8792579BF2900A97433 /* ViewController.swift in Sources */,
+				DB7FB8752579BF2900A97433 /* AppDelegate.swift in Sources */,
+				DB7FB8772579BF2900A97433 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB7FB8862579BF2C00A97433 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB7FB88F2579BF2C00A97433 /* iOS_USCoinsDetectorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB7FB8912579BF2C00A97433 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB7FB89A2579BF2C00A97433 /* iOS_USCoinsDetectorUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DB7FB88C2579BF2C00A97433 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB7FB8702579BF2900A97433 /* iOS_USCoinsDetector */;
+			targetProxy = DB7FB88B2579BF2C00A97433 /* PBXContainerItemProxy */;
+		};
+		DB7FB8972579BF2C00A97433 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB7FB8702579BF2900A97433 /* iOS_USCoinsDetector */;
+			targetProxy = DB7FB8962579BF2C00A97433 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DB7FB87A2579BF2900A97433 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB7FB87B2579BF2900A97433 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DB7FB8822579BF2B00A97433 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB7FB8832579BF2B00A97433 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DB7FB89C2579BF2C00A97433 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DB7FB89D2579BF2C00A97433 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DB7FB89F2579BF2C00A97433 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G3B2ACWEFM;
+				INFOPLIST_FILE = iOS_USCoinsDetector/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alquimia.iOS-USCoinsDetector";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DB7FB8A02579BF2C00A97433 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G3B2ACWEFM;
+				INFOPLIST_FILE = iOS_USCoinsDetector/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alquimia.iOS-USCoinsDetector";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DB7FB8A22579BF2C00A97433 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G3B2ACWEFM;
+				INFOPLIST_FILE = iOS_USCoinsDetectorTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alquimia.iOS-USCoinsDetectorTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOS_USCoinsDetector.app/iOS_USCoinsDetector";
+			};
+			name = Debug;
+		};
+		DB7FB8A32579BF2C00A97433 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G3B2ACWEFM;
+				INFOPLIST_FILE = iOS_USCoinsDetectorTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alquimia.iOS-USCoinsDetectorTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOS_USCoinsDetector.app/iOS_USCoinsDetector";
+			};
+			name = Release;
+		};
+		DB7FB8A52579BF2C00A97433 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G3B2ACWEFM;
+				INFOPLIST_FILE = iOS_USCoinsDetectorUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alquimia.iOS-USCoinsDetectorUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = iOS_USCoinsDetector;
+			};
+			name = Debug;
+		};
+		DB7FB8A62579BF2C00A97433 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G3B2ACWEFM;
+				INFOPLIST_FILE = iOS_USCoinsDetectorUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alquimia.iOS-USCoinsDetectorUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = iOS_USCoinsDetector;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DB7FB86C2579BF2900A97433 /* Build configuration list for PBXProject "iOS_USCoinsDetector" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB7FB89C2579BF2C00A97433 /* Debug */,
+				DB7FB89D2579BF2C00A97433 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB7FB89E2579BF2C00A97433 /* Build configuration list for PBXNativeTarget "iOS_USCoinsDetector" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB7FB89F2579BF2C00A97433 /* Debug */,
+				DB7FB8A02579BF2C00A97433 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB7FB8A12579BF2C00A97433 /* Build configuration list for PBXNativeTarget "iOS_USCoinsDetectorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB7FB8A22579BF2C00A97433 /* Debug */,
+				DB7FB8A32579BF2C00A97433 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB7FB8A42579BF2C00A97433 /* Build configuration list for PBXNativeTarget "iOS_USCoinsDetectorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB7FB8A52579BF2C00A97433 /* Debug */,
+				DB7FB8A62579BF2C00A97433 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DB7FB87D2579BF2900A97433 /* iOS_USCoinsDetector.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DB7FB87E2579BF2900A97433 /* iOS_USCoinsDetector.xcdatamodel */,
+			);
+			currentVersion = DB7FB87E2579BF2900A97433 /* iOS_USCoinsDetector.xcdatamodel */;
+			path = iOS_USCoinsDetector.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = DB7FB8692579BF2900A97433 /* Project object */;
+}
