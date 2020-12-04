@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,30 +13,32 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="VisionObjectRecognitionViewController" customModule="iOS_USCoinsDetector" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OkH-pS-Tnc">
-                                <rect key="frame" x="0.0" y="132" width="428" height="570.66666666666663"/>
+                                <rect key="frame" x="0.0" y="44" width="390" height="693.33333333333337"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="OkH-pS-Tnc" secondAttribute="height" multiplier="3:4" id="tXI-ue-Roo"/>
+                                    <constraint firstAttribute="width" secondItem="OkH-pS-Tnc" secondAttribute="height" multiplier="9:16" id="tXI-ue-Roo"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00 $" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebn-qI-ycg">
-                                <rect key="frame" x="150.66666666666666" y="64" width="126.99999999999997" height="48"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
+                                <rect key="frame" x="98" y="74" width="194" height="94"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="65"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="shadowColor" systemColor="labelColor"/>
+                                <size key="shadowOffset" width="2" height="2"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="ebn-qI-ycg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="AsK-ks-Kiz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OkH-pS-Tnc" secondAttribute="trailing" id="Ze2-4t-3vI"/>
-                            <constraint firstItem="OkH-pS-Tnc" firstAttribute="top" secondItem="ebn-qI-ycg" secondAttribute="bottom" constant="20" id="fSk-HN-9hc"/>
-                            <constraint firstItem="ebn-qI-ycg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="oE1-fB-GvP"/>
-                            <constraint firstItem="ebn-qI-ycg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pvj-jE-cE2"/>
+                            <constraint firstItem="ebn-qI-ycg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hnd-xZ-8cO"/>
+                            <constraint firstItem="OkH-pS-Tnc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="jq8-gG-tDZ"/>
                             <constraint firstItem="OkH-pS-Tnc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uC7-NP-Ra4"/>
                         </constraints>
                     </view>
@@ -51,6 +53,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
