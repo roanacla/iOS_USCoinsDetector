@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  VisionObjectRecognitionViewController.swift
 //  iOS_USCoinsDetector
 //
 //  Created by Roger Navarro on 12/3/20.
@@ -152,7 +152,8 @@ class VisionObjectRecognitionViewController: ViewController {
         shapeLayer.position = CGPoint(x: bounds.midX, y: bounds.midY)
         shapeLayer.name = "Found Object"
         shapeLayer.backgroundColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [1.0, 1.0, 0.2, 0.4])
-        shapeLayer.cornerRadius = 7
+        shapeLayer.cornerRadius = bounds.height/2
+
         return shapeLayer
     }
     
