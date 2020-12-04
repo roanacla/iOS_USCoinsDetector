@@ -16,6 +16,8 @@ class VisionObjectRecognitionViewController: ViewController {
     // Vision parts
     private var requests = [VNRequest]()
     
+    typealias Dollars = Decimal
+    
     @discardableResult
     func setupVision() -> NSError? {
         // Setup Vision parts
@@ -29,7 +31,8 @@ class VisionObjectRecognitionViewController: ViewController {
             let objectRecognition = VNCoreMLRequest(model: visionModel, completionHandler: { (request, error) in
                 DispatchQueue.main.async(execute: {
                     // perform all the UI updates on the main queue
-                    if let results = request.results {
+                    if let results = self.getObservations(request.results) {
+                        self.calculateTotal(results)
                         self.drawVisionRequestResults(results)
                     }
                 })
@@ -42,14 +45,40 @@ class VisionObjectRecognitionViewController: ViewController {
         return error
     }
     
-    func drawVisionRequestResults(_ results: [Any]) {
-        CATransaction.begin()
-        CATransaction.setValue(kCFBooleanTrue, forKey: kCATransactionDisableActions)
-        detectionOverlay.sublayers = nil // remove all the old recognized objects
+    func getObservations(_ results: [Any]?) -> [VNRecognizedObjectObservation]?  {
+        guard let results = results, !results.isEmpty else { return nil}
+        var result: [VNRecognizedObjectObservation] = []
         for observation in results where observation is VNRecognizedObjectObservation {
             guard let objectObservation = observation as? VNRecognizedObjectObservation else {
                 continue
             }
+            
+            result.append(objectObservation)
+        }
+        
+        return result.isEmpty ? nil : result
+    }
+    
+    func calculateTotal(_ objectObservations: [VNRecognizedObjectObservation]) {
+        var total: Dollars = Dollars(0)
+        for observation in objectObservations {
+            switch observation.labels[0].identifier {
+            case "nickel":
+                total += Dollars(0.05)
+            case "dime":
+                total += Dollars(0.1)
+            default:
+                total += Dollars(0.0)
+            }
+        }
+        print("\(total)" + "$")
+    }
+    
+    func drawVisionRequestResults(_ objectObservations: [VNRecognizedObjectObservation]) {
+        CATransaction.begin()
+        CATransaction.setValue(kCFBooleanTrue, forKey: kCATransactionDisableActions)
+        detectionOverlay.sublayers = nil // remove all the old recognized objects
+        for objectObservation in objectObservations {
             // Select only the label with the highest confidence.
             let topLabelObservation = objectObservation.labels[0]
             let objectBounds = VNImageRectForNormalizedRect(objectObservation.boundingBox, Int(bufferSize.width), Int(bufferSize.height))
