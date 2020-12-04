@@ -14,6 +14,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     //MARK: - IBOutlet
     
     @IBOutlet weak private var previewView: UIView!
+    @IBOutlet weak var totalLabel: UILabel!
     
     //MARK: - Properties
     var bufferSize: CGSize = .zero

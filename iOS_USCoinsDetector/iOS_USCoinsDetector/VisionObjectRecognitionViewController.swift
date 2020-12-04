@@ -37,6 +37,7 @@ class VisionObjectRecognitionViewController: ViewController {
                         self.calculateTotal(results)
                         self.drawVisionRequestResults(results)
                     } else {
+                        self.totalLabel.text = "0.00 $"
                         self.detectionOverlay.sublayers = nil // remove all the old recognized objects
                     }
                 })
@@ -75,7 +76,9 @@ class VisionObjectRecognitionViewController: ViewController {
                 total += Dollars(0.0)
             }
         }
-        print("\(total)" + "$")
+        let totalLabel = "\(total)" + "$"
+        print(totalLabel)
+        self.totalLabel.text = totalLabel
     }
     
     func drawVisionRequestResults(_ objectObservations: [VNRecognizedObjectObservation]) {

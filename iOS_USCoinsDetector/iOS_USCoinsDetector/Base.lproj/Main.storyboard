@@ -23,8 +23,8 @@
                                     <constraint firstAttribute="width" secondItem="OkH-pS-Tnc" secondAttribute="height" multiplier="3:4" id="tXI-ue-Roo"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebn-qI-ycg">
-                                <rect key="frame" x="161" y="64" width="106" height="48"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00 $" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebn-qI-ycg">
+                                <rect key="frame" x="150.66666666666666" y="64" width="126.99999999999997" height="48"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -42,6 +42,7 @@
                     </view>
                     <connections>
                         <outlet property="previewView" destination="OkH-pS-Tnc" id="SHR-fk-u2h"/>
+                        <outlet property="totalLabel" destination="ebn-qI-ycg" id="JmM-MS-GFT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
