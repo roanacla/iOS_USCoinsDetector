@@ -63,8 +63,13 @@ class VisionObjectRecognitionViewController: ViewController {
         
         return result.isEmpty ? nil : result
     }
+    var bufferCount = 0
     
     func calculateTotal(_ objectObservations: [VNRecognizedObjectObservation]) {
+        if bufferCount != 5 {
+            bufferCount+=1
+            return
+        }
         var total: Dollars = Dollars(0)
         for observation in objectObservations {
             switch observation.labels[0].identifier {
@@ -79,6 +84,7 @@ class VisionObjectRecognitionViewController: ViewController {
         let totalLabel = "\(total)" + "$"
         print(totalLabel)
         self.totalLabel.text = totalLabel
+        bufferCount = 0
     }
     
     func drawVisionRequestResults(_ objectObservations: [VNRecognizedObjectObservation]) {
@@ -101,7 +107,6 @@ class VisionObjectRecognitionViewController: ViewController {
 //        self.updateLayerGeometry()
         CATransaction.commit()
     }
-    
 
     override func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {
