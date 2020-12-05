@@ -31,15 +31,41 @@
                                 <color key="shadowColor" systemColor="labelColor"/>
                                 <size key="shadowOffset" width="2" height="2"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTM-0e-Cww">
+                                <rect key="frame" x="260" y="690" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Brf-7i-4Gf"/>
+                                    <constraint firstAttribute="width" constant="100" id="bxT-Bn-8SY"/>
+                                </constraints>
+                                <state key="normal" image="add"/>
+                                <connections>
+                                    <action selector="addup:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4Ff-2Z-vB5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y1D-9f-2td">
+                                <rect key="frame" x="30" y="690" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="KhX-wa-CI7"/>
+                                    <constraint firstAttribute="height" constant="100" id="Q3g-tc-Trh"/>
+                                </constraints>
+                                <state key="normal" image="restart"/>
+                                <connections>
+                                    <action selector="restartCount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GcI-em-wZT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ebn-qI-ycg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="AsK-ks-Kiz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dTM-0e-Cww" secondAttribute="trailing" constant="30" id="XGx-HH-RwP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OkH-pS-Tnc" secondAttribute="trailing" id="Ze2-4t-3vI"/>
+                            <constraint firstItem="Y1D-9f-2td" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="h6g-X7-Hta"/>
                             <constraint firstItem="ebn-qI-ycg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hnd-xZ-8cO"/>
                             <constraint firstItem="OkH-pS-Tnc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="jq8-gG-tDZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dTM-0e-Cww" secondAttribute="bottom" constant="20" id="qXq-lj-MHn"/>
                             <constraint firstItem="OkH-pS-Tnc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uC7-NP-Ra4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Y1D-9f-2td" secondAttribute="bottom" constant="20" id="xTz-ea-0cj"/>
                         </constraints>
                     </view>
                     <connections>
@@ -49,10 +75,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-26.635514018691588" y="-5.8315334773218144"/>
+            <point key="canvasLocation" x="-27.69230769230769" y="-6.3981042654028437"/>
         </scene>
     </scenes>
     <resources>
+        <image name="add" width="854" height="854"/>
+        <image name="restart" width="854" height="854"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

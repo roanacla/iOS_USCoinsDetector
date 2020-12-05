@@ -11,6 +11,7 @@ import Vision
 
 class VisionObjectRecognitionViewController: ViewController {
     
+    //MARK: - Properties
     private var detectionOverlay: CALayer! = nil
     
     // Vision parts
@@ -21,6 +22,13 @@ class VisionObjectRecognitionViewController: ViewController {
                                              "dime":"10"]
     private let coinColors: [String:[CGFloat]] = ["nickel": [0.2, 1.0, 1.0, 0.4],
                                                   "dime": [1.0, 0.2, 0.2, 0.4]]
+    var baseAmount: Dollars = 0.0
+    
+    var currentTotal: Dollars = 0.0 {
+        didSet {
+            self.totalLabel.text = "\(self.baseAmount + self.currentTotal) $"
+        }
+    }
     
     @discardableResult
     func setupVision() -> NSError? {
@@ -39,7 +47,7 @@ class VisionObjectRecognitionViewController: ViewController {
                         self.calculateTotal(results)
                         self.drawVisionRequestResults(results)
                     } else {
-                        self.totalLabel.text = "0.00 $"
+                        self.currentTotal = 0
                         self.detectionOverlay.sublayers = nil // remove all the old recognized objects
                     }
                 })
@@ -66,7 +74,16 @@ class VisionObjectRecognitionViewController: ViewController {
         return result.isEmpty ? nil : result
     }
     var bufferCount = 0
+    //MARK: - IBActions
     
+    @IBAction func addup(_ sender: Any) {
+        self.baseAmount += currentTotal
+    }
+    
+    @IBAction func restartCount(_ sender: Any) {
+        self.baseAmount = 0.0
+    }
+    //MARK: - Functions
     func calculateTotal(_ objectObservations: [VNRecognizedObjectObservation]) {
         if bufferCount != 5 {
             bufferCount+=1
@@ -83,8 +100,7 @@ class VisionObjectRecognitionViewController: ViewController {
                 total += Dollars(0.0)
             }
         }
-        let totalLabel = "\(total)" + "$"
-        self.totalLabel.text = totalLabel
+        self.currentTotal = total
         bufferCount = 0
     }
     
@@ -105,7 +121,6 @@ class VisionObjectRecognitionViewController: ViewController {
             shapeLayer.addSublayer(textLayer)
             detectionOverlay.addSublayer(shapeLayer)
         }
-//        self.updateLayerGeometry()
         CATransaction.commit()
     }
 
