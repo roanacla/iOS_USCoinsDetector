@@ -19,6 +19,8 @@ class VisionObjectRecognitionViewController: ViewController {
     typealias Dollars = Decimal
     private let dollarLabels: [String:String] = ["nickel":"5",
                                              "dime":"10"]
+    private let coinColors: [String:[CGFloat]] = ["nickel": [0.2, 1.0, 1.0, 0.4],
+                                                  "dime": [1.0, 0.2, 0.2, 0.4]]
     
     @discardableResult
     func setupVision() -> NSError? {
@@ -82,7 +84,6 @@ class VisionObjectRecognitionViewController: ViewController {
             }
         }
         let totalLabel = "\(total)" + "$"
-        print(totalLabel)
         self.totalLabel.text = totalLabel
         bufferCount = 0
     }
@@ -96,7 +97,7 @@ class VisionObjectRecognitionViewController: ViewController {
             let topLabelObservation = objectObservation.labels[0]
             let objectBounds = VNImageRectForNormalizedRect(objectObservation.boundingBox, Int(bufferSize.width), Int(bufferSize.height))
             
-            let shapeLayer = self.createRoundedRectLayerWithBounds(objectBounds)
+            let shapeLayer = self.createRoundedRectLayerWithBounds(objectBounds, identifier: topLabelObservation.identifier)
             
             let textLayer = self.createTextSubLayerInBounds(objectBounds,
                                                             identifier: topLabelObservation.identifier,
@@ -188,12 +189,12 @@ class VisionObjectRecognitionViewController: ViewController {
         return textLayer
     }
     
-    func createRoundedRectLayerWithBounds(_ bounds: CGRect) -> CALayer {
+    func createRoundedRectLayerWithBounds(_ bounds: CGRect, identifier: String) -> CALayer {
         let shapeLayer = CALayer()
         shapeLayer.bounds = bounds
         shapeLayer.position = CGPoint(x: bounds.midX, y: bounds.midY)
         shapeLayer.name = "Found Object"
-        shapeLayer.backgroundColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [1.0, 1.0, 0.2, 0.4])
+        shapeLayer.backgroundColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: coinColors[identifier] ?? [1.0, 1.0, 0.2, 0.4])
         shapeLayer.cornerRadius = bounds.height/2
 
         return shapeLayer
