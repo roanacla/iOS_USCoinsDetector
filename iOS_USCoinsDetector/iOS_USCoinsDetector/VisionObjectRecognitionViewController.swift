@@ -18,10 +18,19 @@ class VisionObjectRecognitionViewController: ViewController {
     private var requests = [VNRequest]()
     
     typealias Dollars = Decimal
-    private let dollarLabels: [String:String] = ["nickel":"5",
-                                             "dime":"10"]
-    private let coinColors: [String:[CGFloat]] = ["nickel": [0.2, 1.0, 1.0, 0.4],
-                                                  "dime": [1.0, 0.2, 0.2, 0.4]]
+    private let dollarLabels: [String:String] = [
+        "penny":"1",
+        "nickel":"5",
+        "dime":"10",
+        "quarter":"25",
+        "dollar":"100"]
+    private let coinColors: [String:[CGFloat]] = [
+        "penny": [0.2, 1.0, 1.0, 0.4],
+        "nickel": [0.2, 0.2, 1.0, 0.4],
+        "dime": [1.0, 0.2, 1.0, 0.4],
+        "quarter": [1.0, 0.2, 0.2, 0.4],
+        "dollar": [0.2, 1.0, 0.3, 0.4]
+    ]
     var baseAmount: Dollars = 0.0
     
     var currentTotal: Dollars = 0.0 {
@@ -30,12 +39,14 @@ class VisionObjectRecognitionViewController: ViewController {
         }
     }
     
+    var observationsSnapShot : [VNRecognizedObjectObservation] = []
+    
     @discardableResult
     func setupVision() -> NSError? {
         // Setup Vision parts
         let error: NSError! = nil
         
-        guard let modelURL = Bundle.main.url(forResource: "USCoinsDetector", withExtension: "mlmodelc") else {
+        guard let modelURL = Bundle.main.url(forResource: "IOS coin Detector 1 Iteration 4720", withExtension: "mlmodelc") else {
             return NSError(domain: "VisionObjectRecognitionViewController", code: -1, userInfo: [NSLocalizedDescriptionKey: "Model file is missing"])
         }
         do {
@@ -44,9 +55,11 @@ class VisionObjectRecognitionViewController: ViewController {
                 DispatchQueue.main.async(execute: {
                     // perform all the UI updates on the main queue
                     if let results = self.getObservations(request.results) {
+                        self.observationsSnapShot = results
                         self.calculateTotal(results)
                         self.drawVisionRequestResults(results)
                     } else {
+                        self.observationsSnapShot = []
                         self.currentTotal = 0
                         self.detectionOverlay.sublayers = nil // remove all the old recognized objects
                     }
@@ -78,6 +91,34 @@ class VisionObjectRecognitionViewController: ViewController {
     
     @IBAction func addup(_ sender: Any) {
         self.baseAmount += currentTotal
+        
+        if observationsSnapShot.isEmpty { return }
+        CATransaction.begin()
+        CATransaction.setValue(kCFBooleanTrue, forKey: kCATransactionDisableActions)
+        for observation in self.observationsSnapShot {
+            let box = VNImageRectForNormalizedRect(observation.boundingBox, Int(bufferSize.width), Int(bufferSize.height))
+            let balloon = CALayer()
+            balloon.name = "plusSigns"
+            balloon.contents = UIImage(named: "plus")!.cgImage
+//
+            balloon.bounds = box
+            balloon.frame = CGRect(x: box.midY, y: box.midX, width: 50, height: 50)
+            self.rootLayer.insertSublayer(balloon, below: self.rootLayer)
+        }
+        CATransaction.commit()
+
+//        let flight = CAKeyframeAnimation(keyPath: "position")
+//        flight.duration = 12.0
+//        flight.values = [
+//          CGPoint(x: -50.0, y: 0.0),
+//          CGPoint(x: view.frame.width + 50.0, y: 160.0),
+//          CGPoint(x: -50.0, y: loginButton.center.y)
+//          ].map { NSValue(cgPoint: $0) }
+//
+//        flight.keyTimes = [0.0, 0.5, 1.0]
+//        balloon.add(flight, forKey: nil)
+//        balloon.position = CGPoint(x: -50.0, y: loginButton.center.y)
+        
     }
     
     @IBAction func restartCount(_ sender: Any) {
@@ -92,10 +133,16 @@ class VisionObjectRecognitionViewController: ViewController {
         var total: Dollars = Dollars(0)
         for observation in objectObservations {
             switch observation.labels[0].identifier {
+            case "penny":
+                total += Dollars(0.01)
             case "nickel":
                 total += Dollars(0.05)
             case "dime":
                 total += Dollars(0.1)
+            case "quarter":
+                total += Dollars(0.25)
+            case "dollar":
+                total += Dollars(1.0)
             default:
                 total += Dollars(0.0)
             }
@@ -121,6 +168,7 @@ class VisionObjectRecognitionViewController: ViewController {
             shapeLayer.addSublayer(textLayer)
             detectionOverlay.addSublayer(shapeLayer)
         }
+//        self.updateLayerGeometry()
         CATransaction.commit()
     }
 

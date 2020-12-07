@@ -18,24 +18,23 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OkH-pS-Tnc">
                                 <rect key="frame" x="0.0" y="44" width="390" height="693.33333333333337"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="OkH-pS-Tnc" secondAttribute="height" multiplier="9:16" id="tXI-ue-Roo"/>
-                                </constraints>
+                                <color key="backgroundColor" systemColor="systemGray4Color"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00 $" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebn-qI-ycg">
-                                <rect key="frame" x="98" y="74" width="194" height="94"/>
+                                <rect key="frame" x="98" y="74" width="194" height="62"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="jrn-WA-EVT"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="65"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="highlightedColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="shadowColor" systemColor="labelColor"/>
+                                <color key="textColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <size key="shadowOffset" width="2" height="2"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTM-0e-Cww">
                                 <rect key="frame" x="260" y="690" width="100" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="Brf-7i-4Gf"/>
-                                    <constraint firstAttribute="width" constant="100" id="bxT-Bn-8SY"/>
+                                    <constraint firstAttribute="width" constant="100" id="3WB-Gw-7KT"/>
                                 </constraints>
                                 <state key="normal" image="add"/>
                                 <connections>
@@ -45,8 +44,8 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y1D-9f-2td">
                                 <rect key="frame" x="30" y="690" width="100" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="KhX-wa-CI7"/>
-                                    <constraint firstAttribute="height" constant="100" id="Q3g-tc-Trh"/>
+                                    <constraint firstAttribute="width" constant="100" id="KH8-nC-I5d"/>
+                                    <constraint firstAttribute="height" constant="100" id="RjR-y5-lgk"/>
                                 </constraints>
                                 <state key="normal" image="restart"/>
                                 <connections>
@@ -55,17 +54,19 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.27060466999999999" green="0.4333130717" blue="0.59727638959999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ebn-qI-ycg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="AsK-ks-Kiz"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dTM-0e-Cww" secondAttribute="trailing" constant="30" id="XGx-HH-RwP"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OkH-pS-Tnc" secondAttribute="trailing" id="Ze2-4t-3vI"/>
-                            <constraint firstItem="Y1D-9f-2td" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="h6g-X7-Hta"/>
-                            <constraint firstItem="ebn-qI-ycg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hnd-xZ-8cO"/>
-                            <constraint firstItem="OkH-pS-Tnc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="jq8-gG-tDZ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dTM-0e-Cww" secondAttribute="bottom" constant="20" id="qXq-lj-MHn"/>
-                            <constraint firstItem="OkH-pS-Tnc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uC7-NP-Ra4"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Y1D-9f-2td" secondAttribute="bottom" constant="20" id="xTz-ea-0cj"/>
+                            <constraint firstItem="OkH-pS-Tnc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="1DD-uR-Mt0"/>
+                            <constraint firstItem="OkH-pS-Tnc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="670-NU-ZuN"/>
+                            <constraint firstItem="Y1D-9f-2td" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="7rc-p8-b0b"/>
+                            <constraint firstItem="ebn-qI-ycg" firstAttribute="centerX" secondItem="OkH-pS-Tnc" secondAttribute="centerX" id="JMm-Jc-91z"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Y1D-9f-2td" secondAttribute="bottom" constant="20" id="TXI-zP-xH4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dTM-0e-Cww" secondAttribute="trailing" constant="30" id="WaK-6k-JTh"/>
+                            <constraint firstItem="OkH-pS-Tnc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Wc0-cd-Kyq"/>
+                            <constraint firstItem="Y1D-9f-2td" firstAttribute="top" secondItem="dTM-0e-Cww" secondAttribute="top" id="X1s-rt-E6a"/>
+                            <constraint firstItem="Y1D-9f-2td" firstAttribute="bottom" secondItem="dTM-0e-Cww" secondAttribute="bottom" id="amN-1w-GTb"/>
+                            <constraint firstItem="ebn-qI-ycg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="exX-bL-L8m"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="OkH-pS-Tnc" secondAttribute="bottom" constant="72.666666666666629" id="jYH-R8-gJE"/>
                         </constraints>
                     </view>
                     <connections>
@@ -81,11 +82,8 @@
     <resources>
         <image name="add" width="854" height="854"/>
         <image name="restart" width="854" height="854"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
