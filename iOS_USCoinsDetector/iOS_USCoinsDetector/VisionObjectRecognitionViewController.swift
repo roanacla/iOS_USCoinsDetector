@@ -90,9 +90,17 @@ class VisionObjectRecognitionViewController: ViewController {
     //MARK: - IBActions
     
     @IBAction func addup(_ sender: Any) {
-        self.baseAmount += currentTotal
+        
+        func delay(seconds: Double, completion: @escaping ()-> Void) {
+          DispatchQueue.main.asyncAfter(deadline: .now() + seconds, execute: completion)
+        }
         
         if observationsSnapShot.isEmpty { return }
+        let fadeIn = CABasicAnimation(keyPath: "opacity")
+        fadeIn.fromValue = 1.0
+        fadeIn.toValue = 0.0
+        fadeIn.duration = 0.3
+        fadeIn.fillMode = .backwards
 
         for observation in self.observationsSnapShot {
             CATransaction.begin()
@@ -101,7 +109,6 @@ class VisionObjectRecognitionViewController: ViewController {
             let balloon = CALayer()
             balloon.name = "plusSigns"
             balloon.contents = UIImage(named: "plus")!.cgImage
-//
             balloon.bounds = box
             balloon.frame = CGRect(x: box.midY, y: box.midX, width: 50, height: 50)
             CATransaction.commit()
@@ -115,10 +122,13 @@ class VisionObjectRecognitionViewController: ViewController {
             
             flight.keyTimes = [0.0, 1.0]
             balloon.add(flight, forKey: nil)
+            balloon.add(fadeIn, forKey: nil)
             balloon.position = CGPoint(x: self.rootLayer.bounds.midX, y: -50.0)
+            delay(seconds: 0.3) {
+                self.baseAmount += self.currentTotal
+            }
         }
         
-
         
     }
     
