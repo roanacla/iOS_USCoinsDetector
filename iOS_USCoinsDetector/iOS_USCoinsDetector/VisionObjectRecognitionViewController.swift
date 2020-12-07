@@ -93,9 +93,10 @@ class VisionObjectRecognitionViewController: ViewController {
         self.baseAmount += currentTotal
         
         if observationsSnapShot.isEmpty { return }
-        CATransaction.begin()
-        CATransaction.setValue(kCFBooleanTrue, forKey: kCATransactionDisableActions)
+
         for observation in self.observationsSnapShot {
+            CATransaction.begin()
+            CATransaction.setValue(kCFBooleanTrue, forKey: kCATransactionDisableActions)
             let box = VNImageRectForNormalizedRect(observation.boundingBox, Int(bufferSize.width), Int(bufferSize.height))
             let balloon = CALayer()
             balloon.name = "plusSigns"
@@ -103,21 +104,21 @@ class VisionObjectRecognitionViewController: ViewController {
 //
             balloon.bounds = box
             balloon.frame = CGRect(x: box.midY, y: box.midX, width: 50, height: 50)
+            CATransaction.commit()
             self.rootLayer.insertSublayer(balloon, below: self.rootLayer)
+            let flight = CAKeyframeAnimation(keyPath: "position")
+            flight.duration = 0.3
+            flight.values = [
+                CGPoint(x: box.midY, y: box.midX),
+                CGPoint(x: self.rootLayer.bounds.midX, y: 0.0)
+            ].map { NSValue(cgPoint: $0) }
+            
+            flight.keyTimes = [0.0, 1.0]
+            balloon.add(flight, forKey: nil)
+            balloon.position = CGPoint(x: self.rootLayer.bounds.midX, y: -50.0)
         }
-        CATransaction.commit()
+        
 
-//        let flight = CAKeyframeAnimation(keyPath: "position")
-//        flight.duration = 12.0
-//        flight.values = [
-//          CGPoint(x: -50.0, y: 0.0),
-//          CGPoint(x: view.frame.width + 50.0, y: 160.0),
-//          CGPoint(x: -50.0, y: loginButton.center.y)
-//          ].map { NSValue(cgPoint: $0) }
-//
-//        flight.keyTimes = [0.0, 0.5, 1.0]
-//        balloon.add(flight, forKey: nil)
-//        balloon.position = CGPoint(x: -50.0, y: loginButton.center.y)
         
     }
     
