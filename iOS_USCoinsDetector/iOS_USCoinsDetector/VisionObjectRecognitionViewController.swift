@@ -14,6 +14,9 @@ class VisionObjectRecognitionViewController: ViewController {
     //MARK: - Properties
     private var detectionOverlay: CALayer! = nil
     
+    //MARK: - Animation Properties
+    private let plusSignAnimationTime = 0.3
+    
     // Vision parts
     private var requests = [VNRequest]()
     
@@ -95,41 +98,10 @@ class VisionObjectRecognitionViewController: ViewController {
           DispatchQueue.main.asyncAfter(deadline: .now() + seconds, execute: completion)
         }
         
-        if observationsSnapShot.isEmpty { return }
-        let fadeIn = CABasicAnimation(keyPath: "opacity")
-        fadeIn.fromValue = 1.0
-        fadeIn.toValue = 0.0
-        fadeIn.duration = 0.3
-        fadeIn.fillMode = .backwards
-
-        for observation in self.observationsSnapShot {
-            CATransaction.begin()
-            CATransaction.setValue(kCFBooleanTrue, forKey: kCATransactionDisableActions)
-            let box = VNImageRectForNormalizedRect(observation.boundingBox, Int(bufferSize.width), Int(bufferSize.height))
-            let balloon = CALayer()
-            balloon.name = "plusSigns"
-            balloon.contents = UIImage(named: "plus")!.cgImage
-            balloon.bounds = box
-            balloon.frame = CGRect(x: box.midY, y: box.midX, width: 50, height: 50)
-            CATransaction.commit()
-            self.rootLayer.insertSublayer(balloon, below: self.rootLayer)
-            let flight = CAKeyframeAnimation(keyPath: "position")
-            flight.duration = 0.3
-            flight.values = [
-                CGPoint(x: box.midY, y: box.midX),
-                CGPoint(x: self.rootLayer.bounds.midX, y: 0.0)
-            ].map { NSValue(cgPoint: $0) }
-            
-            flight.keyTimes = [0.0, 1.0]
-            balloon.add(flight, forKey: nil)
-            balloon.add(fadeIn, forKey: nil)
-            balloon.position = CGPoint(x: self.rootLayer.bounds.midX, y: -50.0)
-            delay(seconds: 0.3) {
-                self.baseAmount += self.currentTotal
-            }
+        self.playAddPlusSignAnimation()
+        delay(seconds: self.plusSignAnimationTime) {
+            self.baseAmount += self.currentTotal //Add total after animation is done
         }
-        
-        
     }
     
     @IBAction func restartCount(_ sender: Any) {
@@ -249,10 +221,11 @@ class VisionObjectRecognitionViewController: ViewController {
         textLayer.name = "Object Label"
         let label = dollarLabels[identifier] ?? ""
         let formattedString = NSMutableAttributedString(string: label+"￠")
-        let largeFont = UIFont(name: "Helvetica", size: 16.0)!
-        formattedString.addAttributes([NSAttributedString.Key.font: largeFont], range: NSRange(location: 0, length: label.count + 1))
+        let largeFont = UIFont(name: "Helvetica", size: 20.0)!
+        
+        formattedString.addAttributes([NSAttributedString.Key.font: largeFont, NSAttributedString.Key.foregroundColor: UIColor.white], range: NSRange(location: 0, length: label.count + 1))
         textLayer.string = formattedString
-        textLayer.bounds = CGRect(x:0, y: (-bounds.size.height/2) + 16, width: bounds.size.height - 10, height: bounds.size.width - 10)
+        textLayer.bounds = CGRect(x:-bounds.size.height/4, y: (-bounds.size.height/2) + 20, width: bounds.size.height - 10, height: bounds.size.width - 10)
         textLayer.position = CGPoint(x: bounds.midX, y: bounds.midY)
         textLayer.shadowOpacity = 0.7
         textLayer.shadowOffset = CGSize(width: 2, height: 2)
@@ -273,5 +246,46 @@ class VisionObjectRecognitionViewController: ViewController {
 
         return shapeLayer
     }
+    
+    //MARK: - Animations
+    
+    private func playAddPlusSignAnimation() {
+        
+        if self.observationsSnapShot.isEmpty { return }
+        //FadeOut Animation
+        let fadeOut = CABasicAnimation(keyPath: "opacity")
+        fadeOut.fromValue = 1.0
+        fadeOut.toValue = 0.0
+        fadeOut.duration = self.plusSignAnimationTime
+        fadeOut.fillMode = .backwards
+
+        for observation in self.observationsSnapShot {
+            CATransaction.begin()
+            CATransaction.setValue(kCFBooleanTrue, forKey: kCATransactionDisableActions)
+            let box = VNImageRectForNormalizedRect(observation.boundingBox, Int(bufferSize.width), Int(bufferSize.height))
+            let plusSign = CALayer()
+            plusSign.name = "plusSigns"
+            plusSign.contents = UIImage(named: "plus")!.cgImage
+            plusSign.bounds = box
+            plusSign.frame = CGRect(x: box.midY, y: box.midX, width: 50, height: 50)
+            CATransaction.commit()
+            self.rootLayer.insertSublayer(plusSign, below: self.rootLayer)
+            //Start Move transition
+            let moveUp = CAKeyframeAnimation(keyPath: "position")
+            moveUp.duration = self.plusSignAnimationTime
+            moveUp.values = [
+                CGPoint(x: box.midY, y: box.midX),
+                CGPoint(x: self.rootLayer.bounds.midX, y: 0.0)
+            ].map { NSValue(cgPoint: $0) }
+            
+            moveUp.keyTimes = [0.0, 1.0]
+            //Add animations
+            plusSign.add(moveUp, forKey: nil)
+            plusSign.add(fadeOut, forKey: nil)
+            plusSign.position = CGPoint(x: self.rootLayer.bounds.midX, y: -100.0)
+        }
+        
+    }
+    
     
 }
