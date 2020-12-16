@@ -18,9 +18,6 @@
 		DB7FB88F2579BF2C00A97433 /* iOS_USCoinsDetectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FB88E2579BF2C00A97433 /* iOS_USCoinsDetectorTests.swift */; };
 		DB7FB89A2579BF2C00A97433 /* iOS_USCoinsDetectorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FB8992579BF2C00A97433 /* iOS_USCoinsDetectorUITests.swift */; };
 		DB9E44202579C46600F53761 /* VisionObjectRecognitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9E441F2579C46600F53761 /* VisionObjectRecognitionViewController.swift */; };
-		DB9E44252579C48C00F53761 /* USCoinsDetector.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = DB9E44242579C48C00F53761 /* USCoinsDetector.mlmodel */; };
-		DBF28870257CC31A0086D0CF /* roger.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = DBF2886F257CC31A0086D0CF /* roger.mlmodel */; };
-		DBF28875257CC7500086D0CF /* US Coins Detector 1 Iteration 2300.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = DBF28874257CC7500086D0CF /* US Coins Detector 1 Iteration 2300.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,9 +55,6 @@
 		DB7FB8992579BF2C00A97433 /* iOS_USCoinsDetectorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_USCoinsDetectorUITests.swift; sourceTree = "<group>"; };
 		DB7FB89B2579BF2C00A97433 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB9E441F2579C46600F53761 /* VisionObjectRecognitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisionObjectRecognitionViewController.swift; sourceTree = "<group>"; };
-		DB9E44242579C48C00F53761 /* USCoinsDetector.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = USCoinsDetector.mlmodel; sourceTree = "<group>"; };
-		DBF2886F257CC31A0086D0CF /* roger.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = roger.mlmodel; sourceTree = "<group>"; };
-		DBF28874257CC7500086D0CF /* US Coins Detector 1 Iteration 2300.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "US Coins Detector 1 Iteration 2300.mlmodel"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,11 +109,8 @@
 			children = (
 				DB7FB8742579BF2900A97433 /* AppDelegate.swift */,
 				DB7FB8762579BF2900A97433 /* SceneDelegate.swift */,
-				DBF28874257CC7500086D0CF /* US Coins Detector 1 Iteration 2300.mlmodel */,
 				DB7FB8782579BF2900A97433 /* ViewController.swift */,
 				DB9E441F2579C46600F53761 /* VisionObjectRecognitionViewController.swift */,
-				DB9E44242579C48C00F53761 /* USCoinsDetector.mlmodel */,
-				DBF2886F257CC31A0086D0CF /* roger.mlmodel */,
 				DB61D5BA257E041500130BCD /* IOS coin Detector 1 Iteration 4720.mlmodel */,
 				DB7FB87A2579BF2900A97433 /* Main.storyboard */,
 				DB7FB8802579BF2B00A97433 /* Assets.xcassets */,
@@ -280,11 +271,8 @@
 			files = (
 				DB7FB87F2579BF2900A97433 /* iOS_USCoinsDetector.xcdatamodeld in Sources */,
 				DB61D5BB257E041500130BCD /* IOS coin Detector 1 Iteration 4720.mlmodel in Sources */,
-				DBF28870257CC31A0086D0CF /* roger.mlmodel in Sources */,
-				DB9E44252579C48C00F53761 /* USCoinsDetector.mlmodel in Sources */,
 				DB7FB8792579BF2900A97433 /* ViewController.swift in Sources */,
 				DB7FB8752579BF2900A97433 /* AppDelegate.swift in Sources */,
-				DBF28875257CC7500086D0CF /* US Coins Detector 1 Iteration 2300.mlmodel in Sources */,
 				DB7FB8772579BF2900A97433 /* SceneDelegate.swift in Sources */,
 				DB9E44202579C46600F53761 /* VisionObjectRecognitionViewController.swift in Sources */,
 			);

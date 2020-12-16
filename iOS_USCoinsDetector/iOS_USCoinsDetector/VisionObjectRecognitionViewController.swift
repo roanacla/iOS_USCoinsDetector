@@ -282,7 +282,7 @@ class VisionObjectRecognitionViewController: ViewController {
             //Add animations
             plusSign.add(moveUp, forKey: nil)
             plusSign.add(fadeOut, forKey: nil)
-            plusSign.position = CGPoint(x: self.rootLayer.bounds.midX, y: -100.0)
+            plusSign.position = CGPoint(x: self.rootLayer.bounds.midX, y: -150.0)
         }
         
     }
